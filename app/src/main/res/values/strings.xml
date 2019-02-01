@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">fendapbengkulu</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_tour_and_guide"><![CDATA[Tour & guide]]></string>
+    <string name="title_ruangkito">Ruang kito</string>
+    <string name="title_ticket">Ticket</string>
+    <string name="title_account">Account</string>
+    <string name="wisata"><![CDATA[Wisata alam & buatan]]></string>
+    <string name="budaya">Wisata\nbudaya</string>
+    <string name="kuliner">Wisata\nkuliner</string>
+    <string name="kerajinan">Wisata\nkerajinan</string>
+    <string name="penginapan"><![CDATA[Hotel & Penginapan]]></string>
+    <string name="soon">Segera\nhadir</string>
+    <string name="title_activity_submenu">Selengkapnya</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet. Lorem ipsum dolot sit amet comsectuer. Lorem ipsum dolor sit amet consectuer. Lorem ipsum dolor sit amet consectuer</string>
+    <string name="need_login">Anda belum masuk</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="login">Login</string>
+    <string name="login_for">Login terlebih dahulu untuk dapat mengirim komentar dan rating</string>
+    <string name="placeholder_enter_email">Masukkan email anda</string>
+    <string name="placeholder_enter_password">Masukkan password</string>
+    <string name="masuk">Masuk</string>
+    <string name="event"><![CDATA[Event & \nperayaan]]></string>
+    <string name="title_about">Tentang</string>
+    <string name="about_desc"><![CDATA[Aplikasi Festival dan Pariwisata Bengkulu\n  Aplikasi ini dibuat sebagai referensi pemerintah dan publik untuk mempromosikan objek-objek wisata yang ada di daerah-daerah khususnya provinsi Bengkulu sehingga nantinya melalui aplikasi ini diharapkan objek-objek wisata memiliki daya saing dan daya jual tingkat nasional dan internasional dalam menghadapi Revolusi Industri 4.0 khususnya dalam bidang pariwisata.\n\nTujuan dan sasaran  FENDAP Bengkulu.    \nTujuan :  Adapun tujuan dari aplikasi Fendap Bengkulu adalah sebagai salah satu sarana meningkatkan kualitas potensi wisata yang ada di provinsi bengkulu dengan indikator sasaran sebagai berikut :  \n\n1. Meningkatkan jumlah wisatawan lokal maupun macanegara di bengkulu. \n2. Meningkatkan peran masyarakat khususnya pemuda dalam megoptimalisasi pariwisata yang ada di provinsi bengkulu. \n3. Untuk membantu UKM – UKM usaha kerajinan dan oleh-oleh di provinsi bengkulu dalam sektor pemasaran serta penjualan. \n4. Mempromosikan kebudayan serta kearifan lokal yang ada di provinsi Bengkulu.]]></string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_tour"
+        android:icon="@drawable/ic_card_travel_black_24dp"
+        android:title="@string/title_tour_and_guide" />
+
+    <item
+        android:id="@+id/navigation_ruangkito"
+        android:icon="@drawable/ic_forum_black_24dp"
+        android:title="@string/title_ruangkito" />
+
+    <item
+        android:id="@+id/navigation_account"
+        android:title="@string/title_about"
+        android:icon="@drawable/ic_person_black_24dp"/>
+</menu>
