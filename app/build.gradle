@@ -44,6 +44,11 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:3.12.0"
     implementation "com.squareup.okhttp3:okhttp-urlconnection:3.10.0"
     implementation "com.squareup.okhttp3:logging-interceptor:3.4.1"
+    //ui
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    //photoview
+    implementation 'com.github.chrisbanes:PhotoView:2.1.4'
+
 }
 repositories {
     mavenCentral()

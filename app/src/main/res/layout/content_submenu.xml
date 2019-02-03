@@ -8,10 +8,15 @@
     tools:context=".SubmenuActivity"
     tools:showIn="@layout/activity_submenu">
 
+    <include layout="@layout/etc_submenu_shimmer"/>
+
+    <include layout="@layout/etc_empty_view"/>
+
+    <include layout="@layout/etc_failure_request"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_submenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </android.support.v7.widget.RecyclerView>
 </android.support.constraint.ConstraintLayout>

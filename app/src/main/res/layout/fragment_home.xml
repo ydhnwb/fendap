@@ -114,7 +114,7 @@
                     <LinearLayout
                         android:padding="16dp"
                         android:background="?android:selectableItemBackground"
-                        android:id="@+id/card_penginapan"
+                        android:id="@+id/card_event"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:layout_weight="1"

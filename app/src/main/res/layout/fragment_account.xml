@@ -48,7 +48,6 @@
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="38dp"
-                        android:src="@drawable/ydhnwb"
                         android:id="@+id/need_login_photo"
                         android:layout_height="38dp" />
                 </LinearLayout>

@@ -1,15 +1,24 @@
 package com.starla.fendapbengkulu
 
+import android.content.pm.ActivityInfo
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import com.starla.fendapbengkulu.adapters.SubmenuAdapter
 import com.starla.fendapbengkulu.converter.WrappedListResponse
-import com.starla.fendapbengkulu.models.Wisata
+import com.starla.fendapbengkulu.models.TourismSpot
 import com.starla.fendapbengkulu.network.ApiUtil
+import com.starla.fendapbengkulu.utilities.Others
 import kotlinx.android.synthetic.main.activity_submenu.*
 import kotlinx.android.synthetic.main.content_submenu.*
+import kotlinx.android.synthetic.main.etc_empty_view.*
+import kotlinx.android.synthetic.main.etc_failure_request.*
+import kotlinx.android.synthetic.main.etc_submenu_shimmer.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,8 +27,10 @@ class SubmenuActivity : AppCompatActivity() {
 
     private var title = ""
     private var target = ""
+    private val wisataService = ApiUtil.getWisataService()
     private lateinit var submenuAdapter: SubmenuAdapter
-    private val wisataService = ApiUtil.getWisataService();
+    private var mList : MutableList<TourismSpot> = mutableListOf()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +44,7 @@ class SubmenuActivity : AppCompatActivity() {
 
     private fun initComp(){
         getIntentData()
-        toolbar.title = title
+        toolbar.setTitle(title)
         rv_submenu.layoutManager = LinearLayoutManager(this@SubmenuActivity)
     }
 
@@ -43,34 +54,54 @@ class SubmenuActivity : AppCompatActivity() {
     }
 
     private fun loadData(){
-        if(target.isNotEmpty()){
-            val request : Call<WrappedListResponse<Wisata>> = wisataService.all()
-            request.enqueue(object : Callback<WrappedListResponse<Wisata>>{
-                override fun onFailure(call: Call<WrappedListResponse<Wisata>>, t: Throwable) {
+        if(target.isNotEmpty() && mList.isEmpty()){
+            etc_empty.visibility = View.INVISIBLE
+            etc_failure.visibility = View.INVISIBLE
+            ui_submenu_shimmer.visibility = View.VISIBLE
+            ui_submenu_shimmer.startShimmerAnimation()
+            val request : Call<WrappedListResponse<TourismSpot>> = wisataService.category(target)
+            request.enqueue(object : Callback<WrappedListResponse<TourismSpot>>{
+                override fun onFailure(call: Call<WrappedListResponse<TourismSpot>>, t: Throwable) {
+                    System.err.println("starla : "+t.message)
+                    ui_submenu_shimmer.stopShimmerAnimation()
+                    ui_submenu_shimmer.visibility = View.INVISIBLE
+                    etc_failure.visibility = View.VISIBLE
                     Toast.makeText(this@SubmenuActivity, "Tidak dapat mengambil data dari server. Coba lagi nanti", Toast.LENGTH_LONG).show()
                 }
 
-                override fun onResponse(call: Call<WrappedListResponse<Wisata>>, response: Response<WrappedListResponse<Wisata>>) {
+                override fun onResponse(call: Call<WrappedListResponse<TourismSpot>>, response: Response<WrappedListResponse<TourismSpot>>) {
                     if(response.isSuccessful){
-                        val data : WrappedListResponse<Wisata>? = response.body()
+                        val data : WrappedListResponse<TourismSpot>? = response.body()
                         if(data != null && data.status == 1){
-                            val mList : MutableList<Wisata> = data.data
+                            //val mList : MutableList<TourismSpot> = data.data
+                            mList.clear()
+                            mList = data.data
                             submenuAdapter = SubmenuAdapter(mList, this@SubmenuActivity)
                             rv_submenu.adapter = submenuAdapter
+                            if(mList.isEmpty()){
+                                ui_submenu_shimmer.stopShimmerAnimation()
+                                ui_submenu_shimmer.visibility = View.INVISIBLE
+                                etc_empty.visibility = View.VISIBLE
+                            }
                         }
                     }else{
+                        ui_submenu_shimmer.stopShimmerAnimation()
+                        ui_submenu_shimmer.visibility = View.INVISIBLE
+                        etc_failure.visibility = View.VISIBLE
                         Toast.makeText(this@SubmenuActivity, "Terjadi kesalahan, coba lagi nanti", Toast.LENGTH_LONG).show()
                     }
+                    ui_submenu_shimmer.stopShimmerAnimation()
+                    ui_submenu_shimmer.visibility = View.INVISIBLE
                 }
             })
-        }else{
-            Toast.makeText(this@SubmenuActivity, "Terjadi kesalahan. Coba lagi nanti", Toast.LENGTH_LONG).show()
         }
     }
 
     override fun onResume() {
         super.onResume()
-        loadData()
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        if(mList.isEmpty()){
+            loadData()
+        }
     }
-
 }

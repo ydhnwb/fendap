@@ -22,19 +22,41 @@ class FragmentHome : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         view.card_wisata.setOnClickListener {
             val i = Intent(activity, SubmenuActivity::class.java)
-            i.putExtra("TITLE", "Wisata alam dan buatan")
-            i.putExtra("TARGET", "wisata-alam")
+            i.putExtra("TITLE", "TourismSpot alam dan buatan")
+            i.putExtra("TARGET", "wisata-alam-dan-buatan")
             startActivity(i)
         }
-        view.card_budaya.setOnClickListener { startActivity(Intent(activity, SubmenuActivity::class.java)) }
-        view.card_kuliner.setOnClickListener { startActivity(Intent(activity, SubmenuActivity::class.java)) }
-        view.card_kerajinan.setOnClickListener { startActivity(Intent(activity, SubmenuActivity::class.java)) }
-        view.card_penginapan.setOnClickListener { startActivity(Intent(activity, SubmenuActivity::class.java)) }
+        view.card_budaya.setOnClickListener {
+            val i = Intent(activity, SubmenuActivity::class.java)
+            i.putExtra("TITLE", "TourismSpot budaya")
+            i.putExtra("TARGET", "wisata-budaya")
+            startActivity(i)
+        }
+        view.card_kuliner.setOnClickListener {
+            val i = Intent(activity, SubmenuActivity::class.java)
+            i.putExtra("TITLE", "TourismSpot kuliner")
+            i.putExtra("TARGET", "wisata-kuliner")
+            startActivity(i)
+        }
+
+        view.card_kerajinan.setOnClickListener {
+            val i = Intent(activity, SubmenuActivity::class.java)
+            i.putExtra("TITLE", "TourismSpot kerajinan")
+            i.putExtra("TARGET", "wisata-kerajinan")
+            startActivity(i)
+        }
+
+        view.card_event.setOnClickListener {
+            val i = Intent(activity, SubmenuActivity::class.java)
+            i.putExtra("TITLE", "Event dan perayaan")
+            i.putExtra("TARGET", "event")
+            startActivity(i)
+        }
 
         view.slider_banner.setIndicatorAnimation(IndicatorAnimations.SLIDE)
-        view.slider_banner.setAutoScrolling(true)
+        view.slider_banner.isAutoScrolling = true
         view.slider_banner.setSliderTransformAnimation(SliderAnimations.FADETRANSFORMATION)
-        view.slider_banner.setScrollTimeInSec(4)
+        view.slider_banner.scrollTimeInSec = 4
 
         val sliderView = DefaultSliderView(activity)
         sliderView.setImageDrawable(R.drawable.banner_1)

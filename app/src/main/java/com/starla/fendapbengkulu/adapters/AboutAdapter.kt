@@ -26,7 +26,7 @@ class AboutAdapter(val listOfPerson : MutableList<Person>, val context : Context
             itemView.about_email.text = model.email
             itemView.about_photo.setImageResource(model.photo)
             itemView.setOnClickListener {
-                Toast.makeText(context, "Klik", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, model.name, Toast.LENGTH_SHORT).show()
             }
         }
     }

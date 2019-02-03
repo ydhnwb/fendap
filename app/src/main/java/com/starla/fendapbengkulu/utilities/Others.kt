@@ -6,6 +6,7 @@ import android.text.Spanned
 import com.starla.fendapbengkulu.models.User
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
+import android.graphics.Color
 
 class Others {
     companion object {
@@ -24,6 +25,13 @@ class Others {
             val editor = settings.edit()
             editor.putString("TOKEN", user.api_token)
             editor.commit()
+        }
+
+        fun getDarkColor(i : Int, value : Double) : Int{
+            val r = Color.red(i)
+            val g = Color.green(i)
+            val b = Color.blue(i)
+            return Color.rgb((r*value).toInt(), (g*value).toInt(), (b*value).toInt())
         }
     }
 }

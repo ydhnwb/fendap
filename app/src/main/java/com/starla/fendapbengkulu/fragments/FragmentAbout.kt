@@ -3,6 +3,7 @@ package com.starla.fendapbengkulu.fragments
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,16 +17,17 @@ class FragmentAbout : Fragment() {
     private var listOfPerson : MutableList<Person> = mutableListOf()
     private lateinit var mAdapter: AboutAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_about, null, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) : View? {
+      return inflater.inflate(R.layout.fragment_about, null, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        listOfPerson.add(Person("Bambang Sunaryo","sunaryo@gmail.com",R.drawable.ic_card_fendap))
-        listOfPerson.add(Person("Bambang Sunaryo","sunaryo@gmail.com",R.drawable.ic_card_fendap))
-        listOfPerson.add(Person("Bambang Sunaryo","sunaryo@gmail.com",R.drawable.ic_card_fendap))
-        view.rv_about.layoutManager = GridLayoutManager(activity,2)
+        listOfPerson.add(Person("Henny Tri Utami","hennytu@gmail.com",R.drawable.ic_about_1))
+        listOfPerson.add(Person("Rifa Fariza Adhyma Saputra","rifariza@gmail.com",R.drawable.ic_about_2))
+        listOfPerson.add(Person("Yogi Kurniawan","yogikurniawan@gmail.com",R.drawable.ic_about_3))
+        System.out.println(listOfPerson)
+        view.rv_about.layoutManager = GridLayoutManager(activity, 2)
         mAdapter = AboutAdapter(listOfPerson, activity!!)
         view.rv_about.adapter = mAdapter
     }

@@ -3,7 +3,7 @@ package com.starla.fendapbengkulu.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Wisata {
+public class TourismSpot {
     @SerializedName("id")
     @Expose
     private int id;
@@ -28,9 +28,9 @@ public class Wisata {
     @Expose
     private String created_at;
 
-    public Wisata() { }
+    public TourismSpot() { }
 
-    public Wisata(int id, String title, String description, String category, String image, String created_at) {
+    public TourismSpot(int id, String title, String description, String category, String image, String created_at) {
         this.id = id;
         this.title = title;
         this.description = description;

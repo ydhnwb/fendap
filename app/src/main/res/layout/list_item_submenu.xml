@@ -6,7 +6,6 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:background="?android:selectableItemBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
@@ -15,6 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp" />
         <LinearLayout
+            android:background="?android:selectableItemBackground"
             android:padding="16dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -24,13 +24,12 @@
                 android:maxLines="2"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:text="@string/dummy_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
+                android:maxLines="3"
                 android:id="@+id/description"
                 android:layout_marginTop="8dp"
-                android:text="@string/dummy_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
