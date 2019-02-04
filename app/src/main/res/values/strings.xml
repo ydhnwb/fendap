@@ -119,4 +119,9 @@
     <string name="detail_of_image">detail of image</string>
     <string name="belum_ada_data">Belum ada data</string>
     <string name="gagal_terhubung">Tidak dapat mengambil data dari server. Coba lagi nanti</string>
+    <string name="transportasi">Transportasi</string>
+    <string name="cari_trans">Cari transportasi untuk bepergian</string>
+    <string name="info_pemandu">Info pemandu</string>
+    <string name="title_activity_tour_submenu">Daftar</string>
+    <string name="hotel">Penginapan</string>
 </resources>
