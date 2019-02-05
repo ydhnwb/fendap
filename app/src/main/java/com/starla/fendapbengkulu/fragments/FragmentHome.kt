@@ -58,10 +58,29 @@ class FragmentHome : Fragment() {
         view.slider_banner.setSliderTransformAnimation(SliderAnimations.FADETRANSFORMATION)
         view.slider_banner.scrollTimeInSec = 4
 
-        val sliderView = DefaultSliderView(activity)
-        sliderView.setImageDrawable(R.drawable.banner_1)
-        sliderView.setImageScaleType(ImageView.ScaleType.CENTER_CROP)
-        view.slider_banner.addSliderView(sliderView)
+        for (i in 0..4) {
+            val sliderView = DefaultSliderView(activity)
+
+            when(i){
+                0 -> {
+                    sliderView.setImageDrawable(R.drawable.banner_1)
+                }
+                1 -> {
+                    sliderView.setImageDrawable(R.drawable.banner_x_4)
+                }
+                2 -> {
+                    sliderView.setImageDrawable(R.drawable.banner_x_3)
+                }
+                3 -> {
+                    sliderView.setImageDrawable(R.drawable.banner_x_2)
+                }
+                4 -> {
+                    sliderView.setImageDrawable(R.drawable.banner_x_1)
+                }
+            }
+            sliderView.setImageScaleType(ImageView.ScaleType.CENTER_CROP)
+            view.slider_banner.addSliderView(sliderView)
+        }
     }
 
 }

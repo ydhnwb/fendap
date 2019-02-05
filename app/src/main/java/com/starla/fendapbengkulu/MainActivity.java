@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import com.starla.fendapbengkulu.fragments.FragmentAbout;
 import com.starla.fendapbengkulu.fragments.FragmentHome;
 import com.starla.fendapbengkulu.fragments.FragmentRuang;
+import com.starla.fendapbengkulu.fragments.FragmentTicket;
 import com.starla.fendapbengkulu.fragments.FragmentTour;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,16 +51,24 @@ public class MainActivity extends AppCompatActivity {
                         navStatus = 1;
                     }
                     break;
-                case R.id.navigation_ruangkito:
+
+
+                case R.id.navigation_ticket:
                     if(navStatus != 2){
-                        fragment = new FragmentRuang();
+                        fragment = new FragmentTicket();
                         navStatus = 2;
                     }
                     break;
-                case R.id.navigation_account:
+                case R.id.navigation_ruangkito:
                     if(navStatus != 3){
-                        fragment = new FragmentAbout();
+                        fragment = new FragmentRuang();
                         navStatus = 3;
+                    }
+                    break;
+                case R.id.navigation_account:
+                    if(navStatus != 4){
+                        fragment = new FragmentAbout();
+                        navStatus = 4;
                     }
                     break;
                 default:
@@ -85,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         //if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
         //}
     }
 

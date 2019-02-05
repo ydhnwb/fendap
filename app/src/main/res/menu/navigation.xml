@@ -12,6 +12,11 @@
         android:title="@string/title_tour_and_guide" />
 
     <item
+        android:id="@+id/navigation_ticket"
+        android:icon="@drawable/ic_receipt_black_24dp"
+        android:title="@string/title_ticket" />
+
+    <item
         android:id="@+id/navigation_ruangkito"
         android:icon="@drawable/ic_forum_black_24dp"
         android:title="@string/title_ruangkito" />
