@@ -5,7 +5,7 @@
 
     <TextView
         android:gravity="center"
-        android:text="Ticket"
+        android:text="Coming soon"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

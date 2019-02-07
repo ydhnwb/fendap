@@ -1,19 +1,15 @@
 package com.starla.fendapbengkulu
 
 import android.content.pm.ActivityInfo
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import android.view.WindowManager
 import android.widget.Toast
 import com.starla.fendapbengkulu.adapters.SubmenuAdapter
 import com.starla.fendapbengkulu.converter.WrappedListResponse
 import com.starla.fendapbengkulu.models.TourismSpot
 import com.starla.fendapbengkulu.network.ApiUtil
-import com.starla.fendapbengkulu.utilities.Others
 import kotlinx.android.synthetic.main.activity_submenu.*
 import kotlinx.android.synthetic.main.content_submenu.*
 import kotlinx.android.synthetic.main.etc_empty_view.*
@@ -27,7 +23,7 @@ class SubmenuActivity : AppCompatActivity() {
 
     private var title = ""
     private var target = ""
-    private val wisataService = ApiUtil.getWisataService()
+    private val wisataService = ApiUtil.getTourismSpotService()
     private lateinit var submenuAdapter: SubmenuAdapter
     private var mList : MutableList<TourismSpot> = mutableListOf()
 
@@ -40,7 +36,6 @@ class SubmenuActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener { finish() }
         initComp()
     }
-
 
     private fun initComp(){
         getIntentData()

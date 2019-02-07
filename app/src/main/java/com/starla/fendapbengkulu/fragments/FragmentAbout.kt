@@ -23,9 +23,9 @@ class FragmentAbout : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        listOfPerson.add(Person("Henny Tri Utami","hennytu@gmail.com",R.drawable.ic_about_1))
-        listOfPerson.add(Person("Rifa Fariza Adhyma Saputra","rifariza@gmail.com",R.drawable.ic_about_2))
-        listOfPerson.add(Person("Yogi Kurniawan","yogikurniawan@gmail.com",R.drawable.ic_about_3))
+        listOfPerson.add(Person("Henny Tri Utami", R.drawable.ic_about_1))
+        listOfPerson.add(Person("Rifa Fariza Adhyma Saputra", R.drawable.ic_about_2))
+        listOfPerson.add(Person("Yogi Kurniawan", R.drawable.ic_about_3))
         System.out.println(listOfPerson)
         view.rv_about.layoutManager = GridLayoutManager(activity, 2)
         mAdapter = AboutAdapter(listOfPerson, activity!!)

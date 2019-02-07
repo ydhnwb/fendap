@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private static int navStatus = -1;
     private Fragment fragment = null;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,5 +95,4 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //}
     }
-
 }

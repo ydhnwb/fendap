@@ -18,12 +18,11 @@ class AboutAdapter(val listOfPerson : MutableList<Person>, val context : Context
 
     override fun getItemCount() = listOfPerson.size
 
-    override fun onBindViewHolder(p0: ViewHolder, p1: Int) = p0.bindData(listOfPerson.get(p1), context)
+    override fun onBindViewHolder(p0: ViewHolder, p1: Int) = p0.bindData(listOfPerson[p1], context)
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         fun bindData(model : Person, context: Context){
             itemView.about_name.text = model.name
-            itemView.about_email.text = model.email
             itemView.about_photo.setImageResource(model.photo)
             itemView.setOnClickListener {
                 Toast.makeText(context, model.name, Toast.LENGTH_SHORT).show()

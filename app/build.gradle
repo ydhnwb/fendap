@@ -48,6 +48,8 @@ dependencies {
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
     //photoview
     implementation 'com.github.chrisbanes:PhotoView:2.1.4'
+    //justify text
+    implementation 'com.uncopt:android.justified:1.0'
 
 }
 repositories {
